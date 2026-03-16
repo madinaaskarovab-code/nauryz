@@ -231,7 +231,7 @@
       display:flex;align-items:center;justify-content:center;font-size:40px;overflow:hidden;border:1px solid rgba(0,0,0,.06)
     }
     .card-name{font-size:15px;line-height:1.2;font-weight:800}
-    .hint{text-align:center;color:#5e6a72;font-size:14px;margin-top:10px}
+    .hint{text-align:center;color:#5e6a72;font-size:14px;margin-top:10px;line-height:1.45}
     .side{display:flex;flex-direction:column;gap:20px}
     .side-card{padding:22px}
     .side-card h3{margin:0 0 12px;font-size:28px}
@@ -275,19 +275,63 @@
       .layout{grid-template-columns:1fr}
       .scene{grid-template-columns:1fr}
       .cards-panel{margin-top:0}
-      .left-zone{padding-top:136px}
+      .left-zone{padding-top:120px}
+      .side{display:none}
     }
     @media (max-width:760px){
-      .app{padding:12px}
-      .board{min-height:auto}
-      .scene{min-height:auto}
-      .drop-zone{width:340px;height:340px}
-      .zone-table{width:360px;height:280px}
-      .zone-yurt{width:360px;height:340px}
-      .cards-grid{grid-template-columns:repeat(2,1fr)}
-      .message{font-size:18px}
-      .side-card h3{font-size:24px}
-      .side-card p,.side-card li{font-size:16px}
+      body{overflow-x:hidden}
+      .app{padding:10px}
+      .header{padding:14px 14px 16px;border-radius:24px}
+      .tag{font-size:12px;padding:7px 12px;margin-bottom:8px}
+      h1{font-size:28px}
+      .subtitle{font-size:16px;line-height:1.35}
+      .stage-pills{margin-top:10px}
+      .stage-pill{font-size:12px;padding:7px 10px}
+      .header-actions{width:100%;justify-content:space-between}
+      .score{min-width:96px;padding:10px 12px}
+      .score .big{font-size:26px}
+      .board{min-height:auto;border-radius:24px}
+      .scene{min-height:auto;gap:14px;padding:12px}
+      .left-zone{padding-top:94px}
+      .drop-wrap{width:100%}
+      .drop-zone{width:min(92vw,350px);height:min(92vw,350px)}
+      .zone-table{width:min(94vw,360px);height:250px}
+      .zone-yurt{width:min(92vw,350px);height:320px}
+      .zone-yurt .roof{left:66px;right:66px;top:22px;height:84px}
+      .zone-yurt .body{left:28px;right:28px;top:104px;bottom:22px}
+      .zone-yurt .door{bottom:22px;width:78px;height:100px}
+      .dropped-items{width:260px;gap:8px}
+      .zone-kazan .dropped-items{width:220px}
+      .zone-table .dropped-items{width:280px}
+      .mini{width:48px;height:48px;border-radius:14px}
+      .message{width:100%;font-size:17px;padding:14px 12px;border-radius:18px}
+      .status{gap:8px}
+      .badge{padding:9px 12px;font-size:13px;text-align:center}
+      .cards-panel{
+        margin-top:0;
+        padding:12px;
+        border-radius:22px;
+        position:sticky;
+        bottom:8px;
+        background:rgba(255,255,255,.9);
+        box-shadow:0 10px 24px rgba(0,0,0,.14);
+      }
+      .cards-title{font-size:22px;margin-bottom:10px}
+      .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+      .card{
+        min-height:108px;
+        padding:10px 8px;
+        border-radius:18px;
+      }
+      .thumb{width:60px;height:60px;border-radius:16px;font-size:34px}
+      .card-name{font-size:14px}
+      .hint{font-size:13px}
+      .result-card,.stage-finish-card{
+        padding:18px;
+        border-radius:24px;
+      }
+      .result-card p,.stage-finish-card p{font-size:17px}
+      button{padding:12px 14px;font-size:15px}
     }
   </style>
 </head>
@@ -329,7 +373,7 @@
           <div class="cards-panel">
             <div class="cards-title">Выбери предмет</div>
             <div class="cards-grid" id="cardsGrid"></div>
-            <div class="hint">Работает и мышкой, и пальцем: можно перетаскивать предметы прямо в центр.</div>
+            <div class="hint">На телефоне удобнее нажимать на предметы или перетаскивать пальцем в центр.</div>
           </div>
         </div>
       </div>
